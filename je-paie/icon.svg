@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#0a5c2a"/>
+<rect x="76" y="150" width="300" height="160" rx="18" fill="#fff"/>
+<text x="226" y="272" font-family="Arial, sans-serif" font-size="120" font-weight="700" text-anchor="middle" fill="#0a5c2a">€</text>
+<circle cx="370" cy="340" r="80" fill="#e5c35a" stroke="#fff" stroke-width="14"/>
+<text x="370" y="372" font-family="Arial, sans-serif" font-size="90" font-weight="700" text-anchor="middle" fill="#000">1</text></svg>

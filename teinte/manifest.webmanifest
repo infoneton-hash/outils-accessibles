@@ -1,0 +1,22 @@
+{
+  "name": "Teinte – couleurs et lumière",
+  "short_name": "Teinte",
+  "description": "Annonce à voix haute la couleur d'un objet et la lumière d'une pièce. Sans compte, hors ligne.",
+  "lang": "fr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["accessibility", "utilities"],
+  "shortcuts": [
+    { "name": "Couleur", "url": "./index.html#couleur" },
+    { "name": "Lumière", "url": "./index.html#lumiere" }
+  ],
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

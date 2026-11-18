@@ -1,0 +1,65 @@
+/* Teinte – contraste AAA : jaune #FFE14D et blanc sur noir */
+:root {
+  --fond: #000000;
+  --texte: #ffffff;
+  --accent: #ffe14d;
+  --bouton: #ffe14d;
+  --texte-bouton: #000000;
+  --secondaire: #1a1a1a;
+  --bord: #ffffff;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--fond); color: var(--texte);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 1.25rem; line-height: 1.5;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+}
+header { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+h1 { font-size: 2rem; margin: 0; color: var(--accent); }
+h2 { font-size: 1.6rem; margin: 0 0 8px; color: var(--accent); }
+main { max-width: 560px; margin: 0 auto; }
+.ecran { display: flex; flex-direction: column; gap: 16px; padding-bottom: 32px; }
+.ecran[hidden] { display: none; }
+.intro { font-size: 1.4rem; margin: 0; }
+button {
+  font: inherit; cursor: pointer; border-radius: 16px; border: 3px solid var(--bord);
+  touch-action: manipulation;
+}
+.gros {
+  min-height: 120px; font-size: 2rem; font-weight: 700;
+  background: var(--bouton); color: var(--texte-bouton); border-color: var(--bouton);
+}
+.moyen { min-height: 64px; font-size: 1.35rem; font-weight: 600; background: var(--secondaire); color: var(--texte); }
+.moyen[aria-pressed="true"] { background: var(--texte); color: var(--fond); }
+.petit { min-height: 48px; min-width: 64px; background: var(--secondaire); color: var(--texte); font-weight: 700; }
+button:focus-visible, input:focus-visible {
+  outline: 4px solid #00e5ff; outline-offset: 4px;
+}
+.options { display: flex; flex-direction: column; gap: 8px; }
+.interrupteur { display: flex; align-items: center; gap: 12px; min-height: 56px; font-size: 1.25rem; }
+.interrupteur input { width: 44px; height: 44px; accent-color: var(--accent); }
+.note { color: var(--texte); font-size: 1.05rem; }
+.visee { position: relative; border: 3px solid var(--bord); border-radius: 16px; overflow: hidden; aspect-ratio: 4 / 3; background: #111; }
+.visee video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mire { position: absolute; left: 50%; top: 50%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  border: 4px solid #fff; box-shadow: 0 0 0 4px #000; border-radius: 8px; }
+.pastille { height: 64px; border-radius: 16px; border: 3px solid var(--bord); background: #333; }
+.resultat { font-size: 2.4rem; font-weight: 800; margin: 0; text-align: center; min-height: 3.6rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Le titre reçoit le focus à chaque écran (lecteurs d'écran) : pas de cadre, ce n'est pas un élément actif. */
+h1[tabindex="-1"]:focus, h2[tabindex="-1"]:focus, p[tabindex="-1"]:focus { outline: none; }
+
+.note a { color: var(--accent); font-weight: 700; display: inline-flex; align-items: center; min-height: 48px; }
+.note a:focus-visible { outline: 4px solid #00e5ff; outline-offset: 4px; }
+
+/* Gros caractères (texte à 200 %) et écrans étroits : rien ne dépasse, les mots longs se coupent. */
+body { overflow-wrap: anywhere; }
+h1, h2, p, button, a, label, li { min-width: 0; hyphens: auto; }
+.barre { flex-wrap: wrap; }
+button { max-width: 100%; white-space: normal; }
+input[type="checkbox"] { flex: none; }
+img, video { max-width: 100%; }

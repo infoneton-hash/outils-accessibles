@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Teinte annonce à voix haute la couleur d'un objet et la lumière d'une pièce, avec l'appareil photo du téléphone. Gratuit, sans compte, hors ligne.">
+<title>Teinte – couleurs et lumière</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1 id="titre">Teinte</h1>
+  <button id="btn-langue" class="petit" type="button" aria-label="Changer de langue">FR</button>
+</header>
+
+<main>
+  <!-- Écran d'accueil -->
+  <section id="ecran-accueil" class="ecran" aria-labelledby="titre">
+    <p id="intro" class="intro">Pointez le téléphone vers un objet. Teinte vous dit sa couleur.</p>
+    <button id="btn-couleur" class="gros" type="button"><span aria-hidden="true">🎨</span> <span id="lbl-couleur">Couleur</span></button>
+    <button id="btn-lumiere" class="gros" type="button"><span aria-hidden="true">💡</span> <span id="lbl-lumiere">Lumière</span></button>
+    <div class="options">
+      <label class="interrupteur"><input type="checkbox" id="opt-voix" checked> <span id="lbl-voix">Voix de l'application</span></label>
+      <label class="interrupteur"><input type="checkbox" id="opt-vibre" checked> <span id="lbl-vibre">Vibrations</span></label>
+    </div>
+    <p class="note" id="note-vie-privee">Rien ne quitte votre téléphone. Pas de compte, pas de publicité.</p>
+    <p class="note"><a id="lien-conf" href="confidentialite.html">Confidentialité et aide</a></p>
+  </section>
+
+  <!-- Écran de mesure -->
+  <section id="ecran-mesure" class="ecran" hidden aria-labelledby="titre-mesure">
+    <h2 id="titre-mesure">Couleur</h2>
+    <div class="visee">
+      <video id="video" playsinline muted aria-hidden="true"></video>
+      <div class="mire" aria-hidden="true"></div>
+    </div>
+    <div id="pastille" class="pastille" aria-hidden="true"></div>
+    <p id="resultat" class="resultat">…</p>
+    <p id="annonce" class="sr-only" aria-live="polite"></p>
+    <button id="btn-annoncer" class="gros" type="button"><span aria-hidden="true">🔊</span> <span id="lbl-annoncer">Annoncer</span></button>
+    <button id="btn-auto" class="moyen" type="button" aria-pressed="false"><span id="lbl-auto">Annonce automatique</span></button>
+    <button id="btn-lampe" class="moyen" type="button" aria-pressed="false" hidden><span id="lbl-lampe">Allumer la lampe</span></button>
+    <button id="btn-retour" class="moyen" type="button"><span aria-hidden="true">⬅</span> <span id="lbl-retour">Retour</span></button>
+  </section>
+</main>
+<canvas id="toile" width="64" height="64" hidden></canvas>
+<script src="app.js"></script>
+</body>
+</html>
